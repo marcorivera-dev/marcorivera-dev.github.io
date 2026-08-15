@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marco Rivera — Solutions Engineer</title>
+<meta name="description" content="Solutions Engineer. I build integrations that solve real operational problems — third-party APIs, data layers, and the business decisions that come out of them.">
+<link rel="canonical" href="https://marcorivera.dev/">
+<meta property="og:title" content="Marco Rivera — Solutions Engineer">
+<meta property="og:description" content="I build integrations that solve real operational problems.">
+<meta property="og:url" content="https://marcorivera.dev/">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg:#fbfbf9; --fg:#1a1a18; --muted:#6b6b66;
+    --line:#e3e3de; --accent:#1f4fd8; --card:#fff; --loss:#b4271f;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#14140f; --fg:#ecece6; --muted:#9a9a92;
+           --line:#2c2c26; --accent:#7ea3ff; --card:#1b1b16; --loss:#e8776d; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased}
+  .wrap{max-width:720px;margin:0 auto;padding:56px 24px 96px}
+
+  /* language toggle */
+  .es{display:none}
+  body.lang-es .en{display:none}
+  body.lang-es .es{display:block}
+  body.lang-es span.es,body.lang-es li.es{display:inline}
+  body.lang-es li.es{display:list-item}
+  #langbtn{
+    position:absolute;top:20px;right:24px;
+    background:none;border:1px solid var(--line);color:var(--muted);
+    border-radius:999px;padding:5px 13px;font:inherit;font-size:.78rem;
+    cursor:pointer;letter-spacing:.04em}
+  #langbtn:hover{color:var(--fg);border-color:var(--muted)}
+
+  .head{display:flex;gap:22px;align-items:flex-start;margin-bottom:22px}
+  .head img{width:104px;height:104px;border-radius:50%;object-fit:cover;
+    flex-shrink:0;border:1px solid var(--line)}
+  h1{font-size:1.7rem;margin:0 0 4px;letter-spacing:-.02em}
+  .tag{color:var(--muted);margin:0;font-size:1.04rem}
+  .intro{margin:0 0 24px}
+  .links a{color:var(--accent);text-decoration:none;margin-right:18px;
+    border-bottom:1px solid transparent}
+  .links a:hover{border-bottom-color:var(--accent)}
+  h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);
+    font-weight:600;margin:52px 0 20px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  .case{background:var(--card);border:1px solid var(--line);border-radius:8px;
+    padding:22px 24px;margin-bottom:18px}
+  .case h3{margin:0 0 4px;font-size:1.12rem;letter-spacing:-.01em}
+  .case .meta{color:var(--muted);font-size:.85rem;margin:0 0 14px}
+  .case dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--muted);font-weight:600;margin-top:12px}
+  .case dd{margin:3px 0 0}
+  .impact{border-left:3px solid var(--accent);padding:10px 0 10px 14px;margin:16px 0 0}
+  .impact strong{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--accent);margin-bottom:4px}
+  .case-links{margin-top:16px;font-size:.9rem}
+  .case-links a{color:var(--accent);text-decoration:none;margin-right:16px}
+  .case-links a:hover{text-decoration:underline}
+  ul.stack{list-style:none;padding:0;margin:0}
+  ul.stack li{margin-bottom:8px}
+  footer{margin-top:60px;color:var(--muted);font-size:.9rem}
+  footer a{color:var(--accent);text-decoration:none}
+  code{font-size:.9em;background:var(--card);border:1px solid var(--line);
+    padding:1px 5px;border-radius:4px}
+  @media(max-width:520px){
+    .head{flex-direction:column;gap:16px}
+    .head img{width:88px;height:88px}
+  }
+</style>
+</head>
+<body>
+<button id="langbtn" type="button">Español</button>
+<div class="wrap">
+
+  <div class="head">
+    <img src="marco.jpg" alt="Marco Rivera">
+    <div>
+      <h1>Marco Rivera</h1>
+      <p class="tag en">Solutions Engineer — I build integrations that solve real operational problems.</p>
+      <p class="tag es">Solutions Engineer — construyo integraciones que resuelven problemas operativos reales.</p>
+    </div>
+  </div>
+
+  <p class="intro en">
+    I run a bubble tea business in Mexico City and built the systems it operates on: POS integrations,
+    an auditable loyalty ledger, and the dashboards that decide what we do next. These run in production,
+    against real customers and real money — every number below came out of a system I still maintain.
+    Discovery, building the thing, and explaining it to someone non-technical is already how I spend my week.
+  </p>
+  <p class="intro es">
+    Dirijo un negocio de bubble tea en la Ciudad de México y construí los sistemas sobre los que opera:
+    integraciones con el punto de venta, un libro mayor auditable de lealtad, y los tableros con los que
+    decidimos qué sigue. Todo corre en producción, con clientes y dinero reales — cada número de aquí
+    abajo salió de un sistema que sigo manteniendo. Hacer discovery, construir la solución y explicársela
+    a alguien no técnico ya es en lo que se me va la semana.
+  </p>
+
+  <p class="links">
+    <a href="https://www.linkedin.com/in/REPLACE-ME">LinkedIn</a>
+    <a href="https://github.com/marcorivera-dev">GitHub</a>
+    <a href="mailto:marco@marcorivera.dev">Email</a>
+    <a href="cv-marco-rivera.pdf">Résumé (PDF)</a>
+  </p>
+
+  <h2><span class="en">Selected work</span><span class="es">Trabajo seleccionado</span></h2>
+
+  <!-- CASE 1 -->
+  <article class="case">
+    <h3 class="en">The loyalty program that was actually a coupon</h3>
+    <h3 class="es">El programa de lealtad que en realidad era un cupón</h3>
+    <p class="meta">Loyverse POS API · Node.js · funnel analysis · custom dashboard</p>
+
+    <dl class="en">
+      <dt>Problem</dt>
+      <dd>We paid a signup bonus to 464 customers — roughly $9,300 MXN — with no way to tell whether it
+      bought loyalty or just discounts.</dd>
+      <dt>What I asked first</dt>
+      <dd>What's the correct denominator? Is the sample large enough to support a trend line? And what am
+      I actually measuring — customer behavior, or program usage? Only 11–15% of receipts carry a customer
+      ID, so it's the latter. That caveat ships on the dashboard itself, not buried in a README.</dd>
+      <dt>What I built</dt>
+      <dd>A three-part pipeline: cursor-paginated extraction from the Loyverse API with defensive backoff,
+      a local cache so recomputation never hits the API, and a funnel view that reads generated JSON — no
+      hardcoded numbers. Customer data is gitignored; the repo ships aggregate sample data so it renders
+      for anyone who clones it.</dd>
+    </dl>
+    <dl class="es">
+      <dt>Problema</dt>
+      <dd>Pagamos un bono de registro a 464 clientes — unos $9,300 MXN — sin forma de saber si eso compraba
+      lealtad o solamente descuentos.</dd>
+      <dt>Qué pregunté primero</dt>
+      <dd>¿Cuál es el denominador correcto? ¿Alcanza la muestra para justificar una línea de tendencia? ¿Y
+      qué estoy midiendo en realidad — comportamiento del cliente o uso del programa? Solo 11–15% de los
+      recibos traen identificador de cliente, así que es lo segundo. Ese caveat va visible en el tablero,
+      no escondido en un README.</dd>
+      <dt>Qué construí</dt>
+      <dd>Un pipeline de tres partes: extracción de la API de Loyverse con paginación por cursor y backoff
+      defensivo, caché local para que recalcular nunca golpee la API, y una vista de embudo que lee un JSON
+      generado — ningún número hardcodeado. Los datos de clientes están en gitignore; el repo incluye datos
+      agregados de muestra para que renderice sin exponer a nadie.</dd>
+    </dl>
+
+    <div class="impact en">
+      <strong>Impact</strong>
+      The obvious metric said 53.9% activation. I found that 87% of "post-signup purchases" happened on the
+      signup day itself — that's the discount being applied, not a return visit. The honest number is
+      <b>23.7%</b>: roughly 3 in 4 enrolled customers never came back on a different day. The program was
+      operating as a single-use coupon.
+    </div>
+    <div class="impact es">
+      <strong>Impacto</strong>
+      La métrica obvia decía 53.9% de activación. Encontré que el 87% de las "compras post-registro"
+      ocurrían el mismo día del registro — o sea, era el descuento aplicándose, no un retorno. El número
+      honesto es <b>23.7%</b>: cerca de 3 de cada 4 registrados nunca volvieron en un día distinto. El
+      programa operaba como cupón de un solo uso.
+    </div>
+    <p class="case-links">
+      <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
+      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+    </p>
+  </article>
+
+  <!-- CASE 2 -->
+  <article class="case">
+    <h3 class="en">From spreadsheet to an auditable data layer, without losing a point</h3>
+    <h3 class="es">De hoja de cálculo a capa de datos auditable, sin perder un solo punto</h3>
+    <p class="meta">PostgreSQL / Supabase · Node.js · Railway · scheduled sync</p>
+
+    <dl class="en">
+      <dt>Problem</dt>
+      <dd>Loyalty balances for 475 customers lived in Google Sheets via Apps Script. A balance was a number
+      in a cell — no history, no audit trail, no way to answer "why does this customer have 340 points?"</dd>
+      <dt>What I asked first</dt>
+      <dd>Can every balance be reconstructed from transactions? What happens if the sync runs twice? And does
+      this script write anything back to the POS? I grep-audited it before running: one call, <code>GET</code>,
+      no writes.</dd>
+      <dt>What I built</dt>
+      <dd>A ledger-backed schema in PostgreSQL — a balance is the sum of its transactions, each tagged with a
+      reason and a tenant ID, multi-tenant by design. Partial unique indexes make duplicate opening balances
+      structurally impossible. A nightly sync runs on Railway alongside the inventory scheduler.</dd>
+    </dl>
+    <dl class="es">
+      <dt>Problema</dt>
+      <dd>Los saldos de lealtad de 475 clientes vivían en Google Sheets vía Apps Script. Un saldo era un
+      número en una celda — sin historial, sin auditoría, sin forma de responder "¿por qué este cliente
+      tiene 340 puntos?"</dd>
+      <dt>Qué pregunté primero</dt>
+      <dd>¿Se puede reconstruir cada saldo desde transacciones? ¿Qué pasa si el sync corre dos veces? ¿Y este
+      script escribe algo de vuelta en el punto de venta? Lo audité por grep antes de correrlo: una sola
+      llamada, <code>GET</code>, cero escrituras.</dd>
+      <dt>Qué construí</dt>
+      <dd>Un esquema con libro mayor en PostgreSQL — un saldo es la suma de sus transacciones, cada una con
+      su razón y su identificador de tenant, multi-tenant por diseño. Índices únicos parciales hacen que un
+      saldo de apertura duplicado sea estructuralmente imposible. Un sync nocturno corre en Railway junto al
+      scheduler de inventario.</dd>
+    </dl>
+
+    <div class="impact en">
+      <strong>Impact</strong>
+      475 customers migrated, 700 ledger entries, <b>zero duplicates and zero orphans</b> — verified against
+      the database, not against what the script printed. The first automated run detected and corrected 225
+      balances that an earlier integer column had silently rounded, and left a record of every adjustment.
+      The system caught the bug the system was built to catch.
+    </div>
+    <div class="impact es">
+      <strong>Impacto</strong>
+      475 clientes migrados, 700 asientos en el libro mayor, <b>cero duplicados y cero huérfanos</b> —
+      verificado contra la base de datos, no contra lo que imprimió el script. La primera corrida automática
+      detectó y corrigió 225 saldos que una columna entera anterior había redondeado en silencio, y dejó
+      constancia de cada ajuste. El sistema atrapó justo el error para el que fue construido.
+    </div>
+    <p class="case-links">
+      <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
+      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+    </p>
+  </article>
+
+  <!-- CASE 3 -->
+  <article class="case">
+    <h3 class="en">Reconciling two signup channels against one customer database</h3>
+    <h3 class="es">Reconciliar dos canales de registro contra una sola base de clientes</h3>
+    <p class="meta">Data reconciliation · Loyverse API · Node.js · CSV cross-reference</p>
+
+    <dl class="en">
+      <dt>Problem</dt>
+      <dd>Signups arrived through two channels — an external form and the website — and both were supposed
+      to land in the POS customer database. Nobody had ever verified that they did. Every person who filled
+      the form was promised a cash bonus.</dd>
+      <dt>What I asked first</dt>
+      <dd>What's the join key, and is it reliable? Am I comparing against the full customer list or a sample?
+      I pulled all 434 customers through the API rather than eyeballing a page of results — a reconciliation
+      run against a sample is worse than none, because it produces a number people trust.</dd>
+      <dt>What I built</dt>
+      <dd>A script that normalizes and deduplicates 399 form submissions down to 374 unique emails, pulls the
+      complete paginated customer list from the API, and reports the exact set difference in both directions.</dd>
+    </dl>
+    <dl class="es">
+      <dt>Problema</dt>
+      <dd>Los registros llegaban por dos canales — un formulario externo y el sitio web — y ambos debían
+      aterrizar en la base de clientes del punto de venta. Nadie había verificado nunca que así fuera. A cada
+      persona que llenó el formulario se le prometió un bono en efectivo.</dd>
+      <dt>Qué pregunté primero</dt>
+      <dd>¿Cuál es la llave de cruce y qué tan confiable es? ¿Estoy comparando contra la lista completa de
+      clientes o contra una muestra? Traje los 434 clientes por API en lugar de mirar una página de
+      resultados — una reconciliación contra muestra es peor que ninguna, porque produce un número en el que
+      la gente confía.</dd>
+      <dt>Qué construí</dt>
+      <dd>Un script que normaliza y deduplica 399 respuestas del formulario a 374 correos únicos, trae la
+      lista completa y paginada de clientes por API, y reporta la diferencia exacta en ambas direcciones.</dd>
+    </dl>
+
+    <div class="impact en">
+      <strong>Impact</strong>
+      98.4% matched, which confirmed the low identification rate was real and not an artifact of an
+      uncounted parallel customer base — that validated the entire analysis above it. It also surfaced
+      <b>6 people who were promised a bonus and never received it</b>, one of them pending for over six
+      months, and revealed that 85% of the customer base came from a channel nobody considered primary.
+    </div>
+    <div class="impact es">
+      <strong>Impacto</strong>
+      98.4% de coincidencia, lo que confirmó que la baja tasa de identificación era real y no un artefacto
+      de una base paralela de clientes sin contar — eso validó todo el análisis anterior. También sacó a la
+      luz <b>6 personas a las que se les prometió un bono y nunca lo recibieron</b>, una de ellas pendiente
+      por más de seis meses, y reveló que el 85% de la base de clientes venía de un canal que nadie
+      consideraba principal.
+    </div>
+    <p class="case-links">
+      <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
+      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+    </p>
+  </article>
+
+  <h2><span class="en">Stack</span><span class="es">Stack</span></h2>
+  <ul class="stack">
+    <li><b><span class="en">Languages</span><span class="es">Lenguajes</span></b> — JavaScript / Node.js, Python, SQL</li>
+    <li><b><span class="en">Data</span><span class="es">Datos</span></b> — PostgreSQL, Supabase,
+      <span class="en">REST API integration (cursor pagination, rate limits, backoff)</span><span class="es">integración de APIs REST (paginación por cursor, rate limits, backoff)</span></li>
+    <li><b><span class="en">Infrastructure</span><span class="es">Infraestructura</span></b> — Railway, AWS (IAM Identity Center, Bedrock), Git</li>
+  </ul>
+
+  <footer>
+    <span class="en">Mexico City · Open to Solutions Engineer / Sales Engineer roles, remote or hybrid · </span>
+    <span class="es">Ciudad de México · Abierto a roles de Solutions Engineer / Sales Engineer, remoto o híbrido · </span>
+    <a href="mailto:marco@marcorivera.dev">marco@marcorivera.dev</a>
+  </footer>
+
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('langbtn');
+    function set(lang) {
+      var es = lang === 'es';
+      document.body.classList.toggle('lang-es', es);
+      document.documentElement.lang = es ? 'es' : 'en';
+      btn.textContent = es ? 'English' : 'Español';
+    }
+    set((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en');
+    btn.addEventListener('click', function () {
+      set(document.body.classList.contains('lang-es') ? 'en' : 'es');
+    });
+  })();
+</script>
+</body>
+</html>
