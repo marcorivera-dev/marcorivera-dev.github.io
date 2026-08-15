@@ -166,6 +166,69 @@
     </p>
   </article>
 
+  <!-- CASE: INVENTORY -->
+  <article class="case">
+    <h3 class="en">Replacing a daily manual stock count with a nightly job</h3>
+    <h3 class="es">Reemplazar el conteo diario de inventario por un proceso nocturno</h3>
+    <p class="meta">Loyverse POS API · Node.js · Railway · scheduled jobs · WhatsApp alerts</p>
+
+    <dl class="en">
+      <dt>Problem</dt>
+      <dd>I counted physical stock by hand every day — 30 minutes a day, about 15 hours a month. Despite
+      that, we still ran out of an ingredient roughly four times a month, and I over-ordered everything
+      else as a hedge against it.</dd>
+      <dt>What I asked first</dt>
+      <dd>What's the real unit of consumption? Sales are products, but stock is ingredients — the link
+      between them is the recipe, so that's what had to be modeled. Then: what threshold counts as
+      critical, and who acts on the alert? An alert nobody acts on is just noise arriving on schedule.</dd>
+      <dt>What I built</dt>
+      <dd>A Node service on Railway running a nightly scheduler. It pulls the day's sales from the Loyverse
+      API, decomposes each product into its ingredients through its recipe, decrements stock, and sends a
+      WhatsApp alert when any ingredient crosses its critical threshold — before the shortage, not after.</dd>
+      <dt>What it can't do</dt>
+      <dd>Computed stock drifts from physical stock, because spillage and waste never appear in sales data.
+      The job replaces the daily count, not the periodic one — a physical recount every few weeks re-anchors
+      the numbers. Treating the computed figure as ground truth would quietly rot the whole system.</dd>
+    </dl>
+    <dl class="es">
+      <dt>Problema</dt>
+      <dd>Contaba el inventario físico a mano todos los días — 30 minutos diarios, unas 15 horas al mes. Aun
+      así nos quedábamos sin algún insumo unas cuatro veces al mes, y compraba de más en todo lo demás como
+      defensa contra eso.</dd>
+      <dt>Qué pregunté primero</dt>
+      <dd>¿Cuál es la unidad real de consumo? Las ventas son productos, pero el stock son insumos — lo que
+      los une es la receta, así que eso era lo que había que modelar. Después: ¿qué nivel cuenta como
+      crítico, y quién actúa sobre la alerta? Una alerta que nadie atiende es solo ruido con horario.</dd>
+      <dt>Qué construí</dt>
+      <dd>Un servicio en Node sobre Railway con un scheduler nocturno. Trae las ventas del día por la API de
+      Loyverse, descompone cada producto en sus insumos según su receta, descuenta el stock, y manda una
+      alerta por WhatsApp cuando algún insumo cruza su nivel crítico — antes del faltante, no después.</dd>
+      <dt>Lo que no puede hacer</dt>
+      <dd>El stock calculado se desfasa del físico, porque los derrames y la merma nunca aparecen en los
+      datos de venta. El proceso reemplaza el conteo diario, no el periódico — un recuento físico cada
+      pocas semanas vuelve a anclar los números. Tratar la cifra calculada como verdad absoluta pudriría
+      el sistema entero en silencio.</dd>
+    </dl>
+
+    <div class="impact en">
+      <strong>Impact</strong>
+      <b>~15 hours a month</b> back from the daily count. Stockouts — around four a month, each one a lost
+      sale — are now pre-empted by the alert instead of discovered at the counter. And purchasing moved from
+      "buy extra just in case" to ordering against real consumption, which freed up cash and cut spoilage.
+    </div>
+    <div class="impact es">
+      <strong>Impacto</strong>
+      <b>~15 horas al mes</b> recuperadas del conteo diario. Los faltantes — unos cuatro al mes, cada uno
+      una venta perdida — ahora se anticipan con la alerta en vez de descubrirse en el mostrador. Y las
+      compras pasaron de "pido de más por si acaso" a pedir con base en consumo real, lo que liberó
+      efectivo y bajó la merma.
+    </div>
+    <p class="case-links">
+      <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
+      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+    </p>
+  </article>
+
   <!-- CASE 2 -->
   <article class="case">
     <h3 class="en">From spreadsheet to an auditable data layer, without losing a point</h3>
@@ -281,7 +344,8 @@
     <li><b><span class="en">Languages</span><span class="es">Lenguajes</span></b> — JavaScript / Node.js, Python, SQL</li>
     <li><b><span class="en">Data</span><span class="es">Datos</span></b> — PostgreSQL, Supabase,
       <span class="en">REST API integration (cursor pagination, rate limits, backoff)</span><span class="es">integración de APIs REST (paginación por cursor, rate limits, backoff)</span></li>
-    <li><b><span class="en">Infrastructure</span><span class="es">Infraestructura</span></b> — Railway, AWS (IAM Identity Center, Bedrock), Git</li>
+    <li><b><span class="en">Infrastructure</span><span class="es">Infraestructura</span></b> — Railway, AWS (IAM Identity Center, Bedrock), Git,
+      <span class="en">scheduled jobs, WhatsApp alerting</span><span class="es">jobs programados, alertas por WhatsApp</span></li>
   </ul>
 
   <footer>
