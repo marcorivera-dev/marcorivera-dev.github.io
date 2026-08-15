@@ -105,7 +105,7 @@
   <p class="links">
     <a href="https://www.linkedin.com/in/marcobenitezrivera/">LinkedIn</a>
     <a href="https://github.com/marcorivera-dev">GitHub</a>
-    <a href="mailto:marco@marcorivera.dev">Email</a>
+    <a href="mailto:marco@marcorivera.dev" class="email-link" data-email="marco@marcorivera.dev">marco@marcorivera.dev</a>
   </p>
 
   <h2><span class="en">Selected work</span><span class="es">Trabajo seleccionado</span></h2>
@@ -287,7 +287,7 @@
   <footer>
     <span class="en">Mexico City · </span>
     <span class="es">Ciudad de México · </span>
-    <a href="mailto:marco@marcorivera.dev">marco@marcorivera.dev</a>
+    <a href="mailto:marco@marcorivera.dev" class="email-link" data-email="marco@marcorivera.dev">marco@marcorivera.dev</a>
   </footer>
 
 </div>
@@ -303,6 +303,18 @@
     set((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en');
     btn.addEventListener('click', function () {
       set(document.body.classList.contains('lang-es') ? 'en' : 'es');
+    });
+
+    // copy email to clipboard on click (mailto still works where a mail app exists)
+    document.querySelectorAll('.email-link').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(a.dataset.email).then(function () {
+          var prev = a.textContent;
+          a.textContent = document.body.classList.contains('lang-es') ? '¡Copiado!' : 'Copied!';
+          setTimeout(function () { a.textContent = prev; }, 1500);
+        });
+      });
     });
   })();
 </script>
