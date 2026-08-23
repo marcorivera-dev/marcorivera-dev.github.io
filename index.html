@@ -10,6 +10,15 @@
 <meta property="og:description" content="I build integrations that solve real operational problems.">
 <meta property="og:url" content="https://marcorivera.dev/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://marcorivera.dev/og-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Marco Rivera — Solutions Engineer">
+<meta property="og:site_name" content="Marco Rivera">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Marco Rivera — Solutions Engineer">
+<meta name="twitter:description" content="I build integrations that solve real operational problems.">
+<meta name="twitter:image" content="https://marcorivera.dev/og-preview.png">
 <style>
   :root {
     --bg:#fbfbf9; --fg:#1a1a18; --muted:#6b6b66;
@@ -280,7 +289,7 @@
     </div>
     <p class="case-links">
       <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
-      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+      <a href="https://github.com/marcorivera-dev/loyalty-ledger">▸ <span class="en">Code</span><span class="es">Código</span></a>
     </p>
   </article>
 
@@ -335,7 +344,7 @@
     </div>
     <p class="case-links">
       <a href="#">▸ <span class="en">3-min walkthrough</span><span class="es">Video de 3 min</span></a>
-      <a href="#">▸ <span class="en">Code</span><span class="es">Código</span></a>
+      <a href="https://github.com/marcorivera-dev/signup-reconciliation">▸ <span class="en">Code</span><span class="es">Código</span></a>
     </p>
   </article>
 
@@ -369,15 +378,24 @@
       set(document.body.classList.contains('lang-es') ? 'en' : 'es');
     });
 
-    // copy email to clipboard on click (mailto still works where a mail app exists)
+    // mailto: (href) fires first where a mail client is configured. If nothing
+    // took the page away after ~600ms, fall back to Gmail compose in a new tab.
     document.querySelectorAll('.email-link').forEach(function (a) {
       a.addEventListener('click', function () {
-        if (!navigator.clipboard) return;
-        navigator.clipboard.writeText(a.dataset.email).then(function () {
-          var prev = a.textContent;
-          a.textContent = document.body.classList.contains('lang-es') ? '¡Copiado!' : 'Copied!';
-          setTimeout(function () { a.textContent = prev; }, 1500);
-        });
+        var timer = setTimeout(function () {
+          if (document.visibilityState === 'visible' && document.hasFocus()) {
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(a.dataset.email), '_blank');
+          }
+        }, 600);
+        function cancel() {
+          clearTimeout(timer);
+          window.removeEventListener('blur', cancel);
+          document.removeEventListener('visibilitychange', cancel);
+          window.removeEventListener('pagehide', cancel);
+        }
+        window.addEventListener('blur', cancel);
+        document.addEventListener('visibilitychange', cancel);
+        window.addEventListener('pagehide', cancel);
       });
     });
   })();
